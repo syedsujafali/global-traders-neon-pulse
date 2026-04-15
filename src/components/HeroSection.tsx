@@ -9,15 +9,33 @@ export default function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
+    <section
+      ref={ref}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+    >
       {/* Parallax background elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full opacity-20"
-          style={{ background: "radial-gradient(circle, var(--neon-green), transparent 70%)", filter: "blur(80px)" }} />
-        <div className="absolute right-1/4 bottom-1/4 h-80 w-80 rounded-full opacity-15"
-          style={{ background: "radial-gradient(circle, var(--neon-blue), transparent 70%)", filter: "blur(80px)" }} />
-        <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, var(--neon-orange), transparent 70%)", filter: "blur(60px)" }} />
+        <div
+          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full opacity-20"
+          style={{
+            background: "radial-gradient(circle, var(--neon-green), transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        <div
+          className="absolute right-1/4 bottom-1/4 h-80 w-80 rounded-full opacity-15"
+          style={{
+            background: "radial-gradient(circle, var(--neon-blue), transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-10"
+          style={{
+            background: "radial-gradient(circle, var(--neon-orange), transparent 70%)",
+            filter: "blur(60px)",
+          }}
+        />
       </motion.div>
 
       {/* Hero image overlay */}
@@ -53,8 +71,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          We connect industries worldwide through sustainable recycling, premium scrap trading,
-          and innovative waste management solutions.
+          We connect industries worldwide through sustainable recycling, premium scrap trading, and
+          innovative waste management solutions.
         </motion.p>
 
         <motion.div

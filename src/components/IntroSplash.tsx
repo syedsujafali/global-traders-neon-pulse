@@ -15,7 +15,8 @@ export default function IntroSplash({ onComplete }: { onComplete: () => void }) 
         <motion.div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at center, oklch(0.20 0.05 250), oklch(0.13 0.02 260) 70%)",
+            background:
+              "radial-gradient(ellipse at center, oklch(0.20 0.05 250), oklch(0.13 0.02 260) 70%)",
           }}
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -24,13 +25,17 @@ export default function IntroSplash({ onComplete }: { onComplete: () => void }) 
         {/* Glow orbs */}
         <motion.div
           className="absolute h-64 w-64 rounded-full"
-          style={{ background: "radial-gradient(circle, oklch(0.80 0.22 150 / 20%), transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, oklch(0.80 0.22 150 / 20%), transparent 70%)",
+          }}
           animate={{ x: [-100, 100, -100], y: [-50, 50, -50] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute h-48 w-48 rounded-full"
-          style={{ background: "radial-gradient(circle, oklch(0.70 0.22 250 / 15%), transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, oklch(0.70 0.22 250 / 15%), transparent 70%)",
+          }}
           animate={{ x: [80, -80, 80], y: [30, -60, 30] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -43,7 +48,8 @@ export default function IntroSplash({ onComplete }: { onComplete: () => void }) 
                 key={i}
                 className="text-5xl font-black tracking-widest sm:text-7xl md:text-8xl"
                 style={{
-                  background: "linear-gradient(90deg, var(--neon-green), var(--neon-blue), var(--neon-orange), var(--neon-green))",
+                  background:
+                    "linear-gradient(90deg, var(--neon-green), var(--neon-blue), var(--neon-orange), var(--neon-green))",
                   backgroundSize: "300% 100%",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
@@ -79,10 +85,7 @@ export default function IntroSplash({ onComplete }: { onComplete: () => void }) 
           </motion.p>
 
           {/* Loading bar */}
-          <motion.div
-            className="mt-4 h-0.5 rounded-full bg-muted"
-            style={{ width: 200 }}
-          >
+          <motion.div className="mt-4 h-0.5 rounded-full bg-muted" style={{ width: 200 }}>
             <motion.div
               className="h-full rounded-full"
               style={{ background: "linear-gradient(90deg, var(--neon-green), var(--neon-blue))" }}

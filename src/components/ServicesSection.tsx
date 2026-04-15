@@ -2,10 +2,34 @@ import { motion } from "framer-motion";
 import { Wrench, Recycle, Factory, Zap } from "lucide-react";
 
 const services = [
-  { title: "Metal Scrap Trading", desc: "Premium ferrous and non-ferrous metal scrap sourcing and trading across global markets.", icon: Wrench, glow: "neon-glow-green", color: "text-neon-green" },
-  { title: "E-Waste Management", desc: "Certified electronic waste processing with environmentally responsible recycling methods.", icon: Recycle, glow: "neon-glow-blue", color: "text-neon-blue" },
-  { title: "Industrial Surplus", desc: "Connecting buyers with quality industrial surplus materials at competitive prices.", icon: Factory, glow: "neon-glow-orange", color: "text-neon-orange" },
-  { title: "Electrical Scrap", desc: "Specialized recovery of valuable materials from electrical components and systems.", icon: Zap, glow: "neon-glow-green", color: "text-neon-green" },
+  {
+    title: "Metal Scrap Trading",
+    desc: "Premium ferrous and non-ferrous metal scrap sourcing and trading across global markets.",
+    icon: Wrench,
+    glow: "neon-glow-green",
+    color: "text-neon-green",
+  },
+  {
+    title: "E-Waste Management",
+    desc: "Certified electronic waste processing with environmentally responsible recycling methods.",
+    icon: Recycle,
+    glow: "neon-glow-blue",
+    color: "text-neon-blue",
+  },
+  {
+    title: "Industrial Surplus",
+    desc: "Connecting buyers with quality industrial surplus materials at competitive prices.",
+    icon: Factory,
+    glow: "neon-glow-orange",
+    color: "text-neon-orange",
+  },
+  {
+    title: "Electrical Scrap",
+    desc: "Specialized recovery of valuable materials from electrical components and systems.",
+    icon: Zap,
+    glow: "neon-glow-green",
+    color: "text-neon-green",
+  },
 ];
 
 export default function ServicesSection() {
@@ -19,7 +43,9 @@ export default function ServicesSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="mb-4 inline-block text-sm tracking-widest text-neon-green uppercase">What We Do</span>
+          <span className="mb-4 inline-block text-sm tracking-widest text-neon-green uppercase">
+            What We Do
+          </span>
           <h2 className="text-4xl font-black md:text-5xl">
             Our <span className="text-gradient-neon">Services</span>
           </h2>

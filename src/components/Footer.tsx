@@ -12,7 +12,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-4">
           <div>
-            <span className="mb-4 block text-xl font-black tracking-wider text-gradient-neon">GLOBAL TRADERS</span>
+            <span className="mb-4 block text-xl font-black tracking-wider text-gradient-neon">
+              GLOBAL TRADERS
+            </span>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Redefining global trade through sustainable practices and innovative solutions.
             </p>
@@ -23,8 +25,13 @@ export default function Footer() {
               <ul className="space-y-2">
                 {links.map((l) => (
                   <li key={l}>
-                    <motion.a href="#" className="text-sm text-muted-foreground transition-colors hover:text-neon-green"
-                      whileHover={{ x: 4 }}>{l}</motion.a>
+                    <motion.a
+                      href="#"
+                      className="text-sm text-muted-foreground transition-colors hover:text-neon-green"
+                      whileHover={{ x: 4 }}
+                    >
+                      {l}
+                    </motion.a>
                   </li>
                 ))}
               </ul>

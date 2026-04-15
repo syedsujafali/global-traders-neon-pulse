@@ -1,23 +1,32 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CursorFollower() {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
+  const sprX = useSpring(mouseX, springConfig);
+  const sprY = useSpring(mouseY, springConfig);
+
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const move = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-      setVisible(true);
+      mouseX.set(e.clientX - 12);
+      mouseY.set(e.clientY - 12);
+      if (!visible) setVisible(true);
     };
     const leave = () => setVisible(false);
+
     window.addEventListener("mousemove", move);
     window.addEventListener("mouseleave", leave);
+
     return () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseleave", leave);
     };
-  }, []);
+  }, [mouseX, mouseY, visible]);
 
   return (
     <motion.div
@@ -25,9 +34,10 @@ export default function CursorFollower() {
       style={{
         background: "radial-gradient(circle, oklch(0.80 0.22 150 / 60%), transparent 70%)",
         filter: "blur(2px)",
+        x: sprX,
+        y: sprY,
+        opacity: visible ? 1 : 0,
       }}
-      animate={{ x: pos.x - 12, y: pos.y - 12, opacity: visible ? 1 : 0 }}
-      transition={{ type: "spring", damping: 25, stiffness: 300, mass: 0.5 }}
     />
   );
 }

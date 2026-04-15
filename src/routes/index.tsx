@@ -19,9 +19,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Global Traders | Premium Trading Solutions" },
-      { name: "description", content: "Global Traders - Leading global trade solutions for metal scrap, e-waste management, and industrial surplus. Sustainable, reliable, premium." },
+      {
+        name: "description",
+        content:
+          "Global Traders - Leading global trade solutions for metal scrap, e-waste management, and industrial surplus. Sustainable, reliable, premium.",
+      },
       { property: "og:title", content: "Global Traders | Premium Trading Solutions" },
-      { property: "og:description", content: "Redefining global trade for the future through sustainable recycling and innovative waste management." },
+      {
+        property: "og:description",
+        content:
+          "Redefining global trade for the future through sustainable recycling and innovative waste management.",
+      },
     ],
   }),
 });
@@ -32,30 +40,38 @@ function Index() {
   return (
     <>
       <CursorFollower />
-      <AnimatePresence>
-        {showIntro && (
-          <motion.div key="intro" exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
-            <IntroSplash onComplete={() => setTimeout(() => setShowIntro(false), 500)} />
+      <AnimatePresence mode="wait">
+        {showIntro ? (
+          <motion.div
+            key="intro"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <IntroSplash onComplete={() => setShowIntro(false)} />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <ParticlesBackground />
+            <Navbar />
+            <main className="relative z-10">
+              <HeroSection />
+              <ServicesSection />
+              <AboutSection />
+              <ProcessSection />
+              <StatsSection />
+              <TestimonialsSection />
+              <ContactSection />
+            </main>
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>
-
-      {!showIntro && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-          <ParticlesBackground />
-          <Navbar />
-          <main className="relative z-10">
-            <HeroSection />
-            <ServicesSection />
-            <AboutSection />
-            <ProcessSection />
-            <StatsSection />
-            <TestimonialsSection />
-            <ContactSection />
-          </main>
-          <Footer />
-        </motion.div>
-      )}
     </>
   );
 }

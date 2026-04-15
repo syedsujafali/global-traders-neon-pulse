@@ -43,18 +43,20 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="mb-4 inline-block text-sm tracking-widest text-neon-blue uppercase">About Us</span>
+          <span className="mb-4 inline-block text-sm tracking-widest text-neon-blue uppercase">
+            About Us
+          </span>
           <h2 className="mb-6 text-4xl font-black md:text-5xl">
             Building a <span className="text-gradient-neon">Sustainable</span> Future
           </h2>
           <p className="mb-6 text-muted-foreground leading-relaxed">
-            Global Traders is a premier trading company specializing in metal scrap, e-waste, 
-            and industrial surplus materials. With operations spanning across continents, 
-            we bridge the gap between waste and value.
+            Global Traders is a premier trading company specializing in metal scrap, e-waste, and
+            industrial surplus materials. With operations spanning across continents, we bridge the
+            gap between waste and value.
           </p>
           <p className="mb-8 text-muted-foreground leading-relaxed">
-            Our commitment to sustainability drives every transaction. We ensure that recyclable 
-            materials find their way back into the production cycle, reducing environmental impact 
+            Our commitment to sustainability drives every transaction. We ensure that recyclable
+            materials find their way back into the production cycle, reducing environmental impact
             while delivering exceptional value to our partners.
           </p>
           <div className="flex gap-8">
@@ -63,8 +65,14 @@ export default function AboutSection() {
               { n: "2K+", l: "Partners", icon: Shield },
               { n: "98%", l: "Satisfaction", icon: TrendingUp },
             ].map((s, i) => (
-              <motion.div key={s.l} className="flex items-center gap-3" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.1 }}>
+              <motion.div
+                key={s.l}
+                className="flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.1 }}
+              >
                 <s.icon className="h-5 w-5 text-neon-green" strokeWidth={1.5} />
                 <div>
                   <p className="text-2xl font-black text-gradient-neon">{s.n}</p>
