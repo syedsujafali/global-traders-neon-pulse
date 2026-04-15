@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Globe, Shield, TrendingUp } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -12,11 +13,16 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="glass-card neon-glow-blue relative aspect-square overflow-hidden rounded-3xl">
-            <div className="absolute inset-0 bg-gradient-neon" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-8xl">🌍</span>
-            </div>
+          <div className="neon-glow-blue relative aspect-square overflow-hidden rounded-3xl">
+            <img
+              src="/about-bg.jpg"
+              alt="Industrial recycling facility with neon lighting"
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
           <motion.div
             className="glass-card absolute -right-6 -bottom-6 rounded-2xl px-6 py-4 neon-glow-green"
@@ -52,11 +58,18 @@ export default function AboutSection() {
             while delivering exceptional value to our partners.
           </p>
           <div className="flex gap-8">
-            {[{ n: "50+", l: "Countries" }, { n: "2K+", l: "Partners" }, { n: "98%", l: "Satisfaction" }].map((s, i) => (
-              <motion.div key={s.l} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            {[
+              { n: "50+", l: "Countries", icon: Globe },
+              { n: "2K+", l: "Partners", icon: Shield },
+              { n: "98%", l: "Satisfaction", icon: TrendingUp },
+            ].map((s, i) => (
+              <motion.div key={s.l} className="flex items-center gap-3" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.1 }}>
-                <p className="text-2xl font-black text-gradient-neon">{s.n}</p>
-                <p className="text-xs text-muted-foreground">{s.l}</p>
+                <s.icon className="h-5 w-5 text-neon-green" strokeWidth={1.5} />
+                <div>
+                  <p className="text-2xl font-black text-gradient-neon">{s.n}</p>
+                  <p className="text-xs text-muted-foreground">{s.l}</p>
+                </div>
               </motion.div>
             ))}
           </div>

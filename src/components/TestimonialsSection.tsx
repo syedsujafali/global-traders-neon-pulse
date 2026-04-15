@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
-  { name: "James Mitchell", role: "CEO, SteelWorks Inc.", text: "Global Traders transformed our supply chain. Their reliability and quality are unmatched in the industry." },
-  { name: "Anika Patel", role: "Director, GreenCycle", text: "Their e-waste management solutions helped us achieve our sustainability goals two years ahead of schedule." },
-  { name: "Marcus Chen", role: "VP, Pacific Metals", text: "We've been partnering with Global Traders for 8 years. Exceptional service and competitive pricing every time." },
+  { name: "James Mitchell", role: "CEO, SteelWorks Inc.", text: "Global Traders transformed our supply chain. Their reliability and quality are unmatched in the industry.", initials: "JM", color: "from-neon-green to-neon-blue" },
+  { name: "Anika Patel", role: "Director, GreenCycle", text: "Their e-waste management solutions helped us achieve our sustainability goals two years ahead of schedule.", initials: "AP", color: "from-neon-blue to-neon-orange" },
+  { name: "Marcus Chen", role: "VP, Pacific Metals", text: "We've been partnering with Global Traders for 8 years. Exceptional service and competitive pricing every time.", initials: "MC", color: "from-neon-orange to-neon-green" },
 ];
 
 export default function TestimonialsSection() {
@@ -26,7 +27,7 @@ export default function TestimonialsSection() {
           </h2>
         </motion.div>
 
-        <div className="relative min-h-[200px]">
+        <div className="relative min-h-[280px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={idx}
@@ -36,11 +37,19 @@ export default function TestimonialsSection() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
             >
+              <Quote className="mx-auto mb-6 h-8 w-8 text-neon-green opacity-50" />
               <p className="mb-8 text-lg leading-relaxed text-muted-foreground italic">
                 "{testimonials[idx].text}"
               </p>
-              <p className="font-bold text-foreground">{testimonials[idx].name}</p>
-              <p className="text-sm text-neon-green">{testimonials[idx].role}</p>
+              <div className="flex items-center justify-center gap-4">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${testimonials[idx].color}`}>
+                  <span className="text-sm font-bold text-primary-foreground">{testimonials[idx].initials}</span>
+                </div>
+                <div className="text-left">
+                  <p className="font-bold text-foreground">{testimonials[idx].name}</p>
+                  <p className="text-sm text-neon-green">{testimonials[idx].role}</p>
+                </div>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
