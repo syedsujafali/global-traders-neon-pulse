@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ArrowRight, Zap } from "lucide-react";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -19,14 +20,19 @@ export default function HeroSection() {
           style={{ background: "radial-gradient(circle, var(--neon-orange), transparent 70%)", filter: "blur(60px)" }} />
       </motion.div>
 
+      {/* Hero image overlay */}
+      <div className="absolute inset-0 z-[1]">
+        <img src="/hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.07]" />
+      </div>
+
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6 inline-block rounded-full border border-border/50 bg-secondary/50 px-4 py-1.5 text-xs tracking-widest text-muted-foreground uppercase"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/50 bg-secondary/50 px-4 py-1.5 text-xs tracking-widest text-muted-foreground uppercase"
         >
-          ⚡ Leading Global Trade Solutions
+          <Zap className="h-3.5 w-3.5 text-neon-green" /> Leading Global Trade Solutions
         </motion.div>
 
         <motion.h1
@@ -59,19 +65,19 @@ export default function HeroSection() {
         >
           <motion.a
             href="#contact"
-            className="rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-primary-foreground"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-primary-foreground"
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px oklch(0.80 0.22 150 / 40%)" }}
             whileTap={{ scale: 0.95 }}
           >
-            Start Trading
+            Start Trading <ArrowRight className="h-4 w-4" />
           </motion.a>
           <motion.a
             href="#services"
-            className="rounded-xl border border-border bg-secondary/30 px-8 py-3.5 text-sm font-semibold text-foreground"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-secondary/30 px-8 py-3.5 text-sm font-semibold text-foreground"
             whileHover={{ scale: 1.05, borderColor: "oklch(0.70 0.22 250 / 50%)" }}
             whileTap={{ scale: 0.95 }}
           >
-            Our Services →
+            Our Services <ArrowRight className="h-4 w-4" />
           </motion.a>
         </motion.div>
       </div>

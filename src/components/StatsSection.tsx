@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { BarChart3, Users, Globe, ThumbsUp } from "lucide-react";
 
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const ref = useRef(null);
@@ -31,10 +32,10 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 50000, suffix: "+", label: "Tons Recycled" },
-  { value: 2500, suffix: "+", label: "Clients Served" },
-  { value: 50, suffix: "+", label: "Countries Reached" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 50000, suffix: "+", label: "Tons Recycled", icon: BarChart3 },
+  { value: 2500, suffix: "+", label: "Clients Served", icon: Users },
+  { value: 50, suffix: "+", label: "Countries Reached", icon: Globe },
+  { value: 98, suffix: "%", label: "Client Satisfaction", icon: ThumbsUp },
 ];
 
 export default function StatsSection() {
@@ -46,6 +47,7 @@ export default function StatsSection() {
             <motion.div key={s.label} className="text-center"
               initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
+              <s.icon className="mx-auto mb-4 h-6 w-6 text-neon-green" strokeWidth={1.5} />
               <Counter target={s.value} suffix={s.suffix} />
               <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
             </motion.div>
