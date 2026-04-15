@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Wrench, Recycle, Factory, Zap } from "lucide-react";
 
 const services = [
-  { title: "Metal Scrap Trading", desc: "Premium ferrous and non-ferrous metal scrap sourcing and trading across global markets.", icon: "🔩", glow: "neon-glow-green" },
-  { title: "E-Waste Management", desc: "Certified electronic waste processing with environmentally responsible recycling methods.", icon: "♻️", glow: "neon-glow-blue" },
-  { title: "Industrial Surplus", desc: "Connecting buyers with quality industrial surplus materials at competitive prices.", icon: "🏭", glow: "neon-glow-orange" },
-  { title: "Electrical Scrap", desc: "Specialized recovery of valuable materials from electrical components and systems.", icon: "⚡", glow: "neon-glow-green" },
+  { title: "Metal Scrap Trading", desc: "Premium ferrous and non-ferrous metal scrap sourcing and trading across global markets.", icon: Wrench, glow: "neon-glow-green", color: "text-neon-green" },
+  { title: "E-Waste Management", desc: "Certified electronic waste processing with environmentally responsible recycling methods.", icon: Recycle, glow: "neon-glow-blue", color: "text-neon-blue" },
+  { title: "Industrial Surplus", desc: "Connecting buyers with quality industrial surplus materials at competitive prices.", icon: Factory, glow: "neon-glow-orange", color: "text-neon-orange" },
+  { title: "Electrical Scrap", desc: "Specialized recovery of valuable materials from electrical components and systems.", icon: Zap, glow: "neon-glow-green", color: "text-neon-green" },
 ];
 
 export default function ServicesSection() {
@@ -36,10 +37,10 @@ export default function ServicesSection() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
             >
               <motion.div
-                className={`mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-secondary text-3xl ${s.glow}`}
+                className={`mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-secondary ${s.glow}`}
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                {s.icon}
+                <s.icon className={`h-8 w-8 ${s.color}`} strokeWidth={1.5} />
               </motion.div>
               <h3 className="mb-3 text-lg font-bold text-foreground">{s.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>

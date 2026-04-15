@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactSection() {
   const [focused, setFocused] = useState("");
@@ -18,11 +19,15 @@ export default function ContactSection() {
           </p>
 
           <div className="space-y-6">
-            {[{ l: "Email", v: "info@globaltraders.com", icon: "✉️" },
-              { l: "Phone", v: "+1 (555) 123-4567", icon: "📞" },
-              { l: "Location", v: "New York, USA", icon: "📍" }].map((c) => (
+            {[
+              { l: "Email", v: "info@globaltraders.com", icon: Mail, color: "text-neon-green" },
+              { l: "Phone", v: "+1 (555) 123-4567", icon: Phone, color: "text-neon-blue" },
+              { l: "Location", v: "New York, USA", icon: MapPin, color: "text-neon-orange" },
+            ].map((c) => (
               <div key={c.l} className="flex items-center gap-4">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl">{c.icon}</span>
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary">
+                  <c.icon className={`h-5 w-5 ${c.color}`} strokeWidth={1.5} />
+                </span>
                 <div>
                   <p className="text-xs text-muted-foreground">{c.l}</p>
                   <p className="font-semibold text-foreground">{c.v}</p>
