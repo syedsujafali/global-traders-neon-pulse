@@ -35,7 +35,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="relative px-6 py-32">
+    <section className="relative px-4 sm:px-6 py-16 md:py-32">
       <div className="mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
           <span className="mb-4 inline-block text-sm tracking-widest text-neon-blue uppercase">
             Testimonials
           </span>
-          <h2 className="mb-16 text-4xl font-black md:text-5xl">
+          <h2 className="mb-10 text-3xl font-black min-[360px]:text-4xl md:text-5xl">
             What Our <span className="text-gradient-neon">Clients</span> Say
           </h2>
         </motion.div>
@@ -55,14 +55,14 @@ export default function TestimonialsSection() {
           <AnimatePresence mode="wait">
             <motion.div
               key={idx}
-              className="glass-card rounded-3xl p-10 md:p-12"
+              className="glass-card rounded-3xl p-6 sm:p-10 md:p-12 text-center"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
             >
               <Quote className="mx-auto mb-6 h-8 w-8 text-neon-green opacity-50" />
-              <p className="mb-8 text-lg leading-relaxed text-muted-foreground italic">
+              <p className="mb-8 text-base leading-relaxed text-muted-foreground italic sm:text-lg">
                 "{testimonials[idx].text}"
               </p>
               <div className="flex items-center justify-center gap-4">

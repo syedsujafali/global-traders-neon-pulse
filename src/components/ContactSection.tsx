@@ -34,7 +34,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative px-6 py-32">
+    <section id="contact" className="relative px-6 py-16 md:py-32">
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -88,7 +88,7 @@ export default function ContactSection() {
         </motion.div>
 
         <motion.form
-          className="glass-card rounded-3xl p-8 md:p-10"
+          className="glass-card rounded-3xl p-6 sm:p-8 md:p-10"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

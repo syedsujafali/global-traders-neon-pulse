@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 sm:px-6"
     >
       {/* Parallax background elements */}
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
@@ -40,7 +40,7 @@ export default function HeroSection() {
 
       {/* Hero image overlay */}
       <div className="absolute inset-0 z-[1]">
-        <img src="/hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-[0.07]" />
+        <img src="/global_logistics.png" alt="" className="h-full w-full object-cover opacity-20" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
@@ -54,7 +54,7 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.h1
-          className="mb-6 text-5xl leading-tight font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+          className="mb-4 text-3xl leading-tight font-black tracking-tight min-[360px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -66,7 +66,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground"
+          className="mx-auto mb-10 max-w-2xl text-base text-muted-foreground sm:text-lg"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}

@@ -10,8 +10,12 @@ export default function CursorFollower() {
   const sprY = useSpring(mouseY, springConfig);
 
   const [visible, setVisible] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    setIsTouch(isTouchDevice);
+    if (isTouchDevice) return;
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX - 12);
       mouseY.set(e.clientY - 12);
@@ -26,7 +30,9 @@ export default function CursorFollower() {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseleave", leave);
     };
-  }, [mouseX, mouseY, visible]);
+  }, [mouseX, mouseY, visible, isTouch]);
+
+  if (isTouch) return null;
 
   return (
     <motion.div

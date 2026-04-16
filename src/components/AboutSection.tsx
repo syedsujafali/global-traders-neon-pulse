@@ -3,7 +3,7 @@ import { Globe, Shield, TrendingUp } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative px-6 py-32">
+    <section id="about" className="relative px-4 sm:px-6 py-16 md:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
         {/* Visual */}
         <motion.div
@@ -15,8 +15,8 @@ export default function AboutSection() {
         >
           <div className="neon-glow-blue relative aspect-square overflow-hidden rounded-3xl">
             <img
-              src="/about-bg.jpg"
-              alt="Industrial recycling facility with neon lighting"
+              src="/industrial_surplus.png"
+              alt="Industrial recycling facility"
               loading="lazy"
               width={1024}
               height={1024}
@@ -25,7 +25,7 @@ export default function AboutSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
           </div>
           <motion.div
-            className="glass-card absolute -right-6 -bottom-6 rounded-2xl px-6 py-4 neon-glow-green"
+            className="glass-card absolute -right-2 -bottom-2 sm:-right-6 sm:-bottom-6 rounded-2xl px-6 py-4 neon-glow-green"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ export default function AboutSection() {
             materials find their way back into the production cycle, reducing environmental impact
             while delivering exceptional value to our partners.
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap gap-6 sm:gap-8">
             {[
               { n: "50+", l: "Countries", icon: Globe },
               { n: "2K+", l: "Partners", icon: Shield },

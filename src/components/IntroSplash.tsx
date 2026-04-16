@@ -46,7 +46,7 @@ export default function IntroSplash({ onComplete }: { onComplete: () => void }) 
             {letters.map((letter, i) => (
               <motion.span
                 key={i}
-                className="text-5xl font-black tracking-widest sm:text-7xl md:text-8xl"
+                 className="text-2xl font-black tracking-widest min-[360px]:text-3xl sm:text-6xl md:text-7xl lg:text-8xl"
                 style={{
                   background:
                     "linear-gradient(90deg, var(--neon-green), var(--neon-blue), var(--neon-orange), var(--neon-green))",

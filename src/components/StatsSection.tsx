@@ -29,7 +29,7 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="text-5xl font-black text-gradient-neon md:text-6xl">
+    <span ref={ref} className="text-4xl font-black text-gradient-neon sm:text-5xl md:text-6xl">
       {count.toLocaleString()}
       {suffix}
     </span>
@@ -45,8 +45,8 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section id="stats" className="relative px-6 py-32">
-      <div className="glass-card mx-auto max-w-7xl rounded-3xl p-12 neon-glow-green md:p-16">
+    <section id="stats" className="relative px-4 sm:px-6 py-16 md:py-32">
+      <div className="glass-card mx-auto max-w-7xl rounded-3xl p-5 sm:p-12 md:p-16 neon-glow-green">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s, i) => (
             <motion.div

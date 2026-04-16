@@ -63,17 +63,30 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
           >
-            <div className="flex flex-col gap-4 px-6 py-4">
-              {links.map((l) => (
-                <a
+            <div className="flex flex-col gap-5 px-6 py-6">
+              {links.map((l, i) => (
+                <motion.a
                   key={l}
                   href={`#${l.toLowerCase()}`}
                   onClick={() => setOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.05 }}
                 >
                   {l}
-                </a>
+                </motion.a>
               ))}
+              <motion.a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 rounded-xl bg-primary py-3 text-center text-sm font-bold text-primary-foreground"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: links.length * 0.05 }}
+              >
+                Get Started
+              </motion.a>
             </div>
           </motion.div>
         )}
