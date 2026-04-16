@@ -63,13 +63,13 @@ export default function ContactSection() {
               },
               {
                 l: "Phone",
-                v: "+1 (555) 123-4567",
+                v: "6281190256",
                 icon: Phone,
                 color: "text-neon-blue",
               },
               {
                 l: "Location",
-                v: "New York, USA",
+                v: "Redhills, Lakdi Ka Pul, Hyderabad",
                 icon: MapPin,
                 color: "text-neon-orange",
               },
